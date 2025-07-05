@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:filme_flix/screens/signup_screen.dart';
 
 class LoginScreen extends StatefulWidget{
   const LoginScreen({super.key});
@@ -46,6 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   labelStyle: const TextStyle(
                     color: Color(0xFF32A873),
                     fontFamily: 'Roboto',
+                    fontSize: 12,
                     fontWeight: FontWeight.w400,
                   ),
                   hintText: 'example@gmail.c|',
@@ -144,7 +146,10 @@ class _LoginScreenState extends State<LoginScreen> {
               Center(
                 child: TextButton(
                   onPressed: () {
-                    // navega pra Sign Up screen
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const SignUpScreen()),
+                     );
                   },
                   child: const Text.rich(
                     TextSpan(

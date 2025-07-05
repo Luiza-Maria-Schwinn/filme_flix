@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:filme_flix/screens/login_screen.dart';
+import 'package:filme_flix/screens/signup_screen.dart';
 
 class LandingScreen extends StatelessWidget{
   const LandingScreen ({super.key});
@@ -93,7 +94,12 @@ class LandingScreen extends StatelessWidget{
                         width: 328,
                         height: 52,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const SignUpScreen()),
+                            );
+                          },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.transparent,
                             foregroundColor: const Color(0xFF32A873),
