@@ -1,3 +1,4 @@
+import 'package:filme_flix/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:filme_flix/screens/login_screen.dart';
 
@@ -187,7 +188,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 width: 328,
                 height: 52,
                 child: ElevatedButton(
-                  onPressed: () {}, 
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => const HomeScreen()),
+                    );
+                  }, 
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFF32A873),
                     foregroundColor: const Color(0xFF121212),

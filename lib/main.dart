@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:filme_flix/screens/landing_screen.dart';
+import 'package:flutter/gestures.dart';
 
 void main() {
   runApp(const MyApp());
+}
+
+class MyCustomScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+    PointerDeviceKind.touch,
+    PointerDeviceKind.mouse, 
+  };
 }
 
 class MyApp extends StatelessWidget {
@@ -32,6 +41,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const LandingScreen(),
+      scrollBehavior: MyCustomScrollBehavior(),
     );
   }
 }
