@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:filme_flix/screens/home_screen.dart';
+import 'package:filme_flix/screens/favorites_screen.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -68,6 +69,16 @@ class _SearchScreenState extends State<SearchScreen> {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (context) => const HomeScreen()),
+            );
+          } else if(index == 1) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const SearchScreen()),
+            );
+          } else if (index == 2) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const FavoritesScreen()),
             );
           }
         },
