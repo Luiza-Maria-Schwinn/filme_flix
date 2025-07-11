@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:filme_flix/screens/home_screen.dart';
 import 'package:filme_flix/screens/favorites_screen.dart';
+import 'package:filme_flix/screens/settings_screen.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -66,20 +67,13 @@ class _SearchScreenState extends State<SearchScreen> {
         onTap: (index) {
           setState(() => selectedIndex = index);
           if (index == 0) {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => const HomeScreen()),
-            );
-          } else if(index == 1) {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => const SearchScreen()),
-            );
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const HomeScreen()));
+          } else if (index == 1) {
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const SearchScreen()));
           } else if (index == 2) {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(builder: (context) => const FavoritesScreen()),
-            );
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const FavoritesScreen()));
+          } else if (index == 3) {
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const SettingsScreen()));
           }
         },
         items: const [
