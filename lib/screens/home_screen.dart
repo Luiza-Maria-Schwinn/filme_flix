@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:filme_flix/screens/search_screen.dart';
 import 'package:filme_flix/screens/favorites_screen.dart';
 import 'package:filme_flix/screens/settings_screen.dart';
+import 'package:filme_flix/screens/detail_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -66,15 +67,25 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: const EdgeInsets.only(right: 24),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Image.asset(
-                          'assets/images/${movieImages[index]}',
-                          width: 100,
-                          height: 140,
-                          fit: BoxFit.cover,
+                      child: GestureDetector(
+                        onTap: () {
+                          if (movieImages[index] == 'home_the_glory.jpg') {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const DetailScreen()),
+                            );
+                          }
+                        },
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Image.asset(
+                            'assets/images/${movieImages[index]}',
+                            width: 100,
+                            height: 140,
+                            fit: BoxFit.cover,
+                          ),
                         ),
-                      ),
+                      )
                     );
                   },
                 ),
@@ -109,15 +120,25 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemBuilder: (context, index) {
                     return Padding(
                       padding: const EdgeInsets.only(right: 24),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Image.asset(
-                          'assets/images/${movieImages[index]}',
-                          width: 100,
-                          height: 140,
-                          fit: BoxFit.cover,
+                      child:GestureDetector(
+                        onTap: () {
+                          if (movieImages[index] == 'home_the_glory.jpg') {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const DetailScreen()),
+                            );
+                          }
+                        },
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Image.asset(
+                            'assets/images/${movieImages[index]}',
+                            width: 100,
+                            height: 140,
+                            fit: BoxFit.cover,
+                          ),
                         ),
-                      ),
+                      )
                     );
                   },
                 ),
